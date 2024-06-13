@@ -54,3 +54,9 @@ resource "azurerm_subnet" "this" {
   virtual_network_name = azurerm_virtual_network.this.name
   address_prefixes     = each.value
 }
+
+resource "azurerm_subnet_network_security_group_association" "this" {
+  for_each                  = azurerm_subnet.this
+  subnet_id                 = each.value.id
+  network_security_group_id = azurerm_network_security_group.this.id
+}
