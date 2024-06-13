@@ -3,6 +3,11 @@ variable "resource_group_name" {
   description = "(Required) The name of the resource group in which to create the virtual network. Changing this forces a new resource to be created."
 }
 
+variable "location" {
+  type        = string
+  description = "(Required) The location where the virtual network is created. Changing this forces a new resource to be created."
+}
+
 variable "suffix" {
   type        = string
   description = "(Required) The suffix to append to the name of all the resources in this module."
