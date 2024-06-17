@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "this" {
 }
 
 module "vnet" {
-  source              = "git::https://github.com/mason1999/terraform-vnet-subnet"
+  source              = "git::https://github.com/mason1999/terraform-vnet"
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
   suffix              = "testing"
